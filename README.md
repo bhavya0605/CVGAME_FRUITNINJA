@@ -1,106 +1,89 @@
-Fruit Ninja: Multiple Cursor Modes
-A Fruit Ninja–inspired game using real‑time computer vision to control multiple cursor modes ("hand" and "face"). The game leverages MediaPipe for hand and face mesh tracking, and PyGame for graphics, animations, and sound. Slice fruits, avoid bombs, and enjoy dynamic visual effects—all in full-screen mode.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fruit Ninja: Multiple Cursor Modes</title>
+</head>
+<body>
+    <h1>Fruit Ninja: Multiple Cursor Modes</h1>
 
-Features
-Real‑Time Tracking:
-Use MediaPipe to track your hand (index finger tip) or face mesh (nose or forehead landmarks) for cursor control.
+    <p>
+        A Fruit Ninja–inspired game using real‑time computer vision to control multiple cursor modes ("hand" and "face").
+        The game leverages <strong>MediaPipe</strong> for hand and face mesh tracking, and <strong>PyGame</strong> for graphics, animations, and sound.
+        Slice fruits, avoid bombs, and enjoy dynamic visual effects—all in full-screen mode.
+    </p>
 
-Multiple Cursor Modes:
-Toggle between "hand" and "face" tracking by pressing M.
+    <h2>Features</h2>
+    <ul>
+        <li><strong>Real‑Time Tracking:</strong> Use MediaPipe to track your hand (index finger tip) or face mesh (nose or forehead landmarks) for cursor control.</li>
+        <li><strong>Multiple Cursor Modes:</strong> Toggle between "hand" and "face" tracking by pressing <strong>M</strong>.</li>
+        <li><strong>Dynamic Gameplay:</strong> Fruits spawn with varying velocities; slice them by moving the cursor over them to score points.</li>
+        <li><strong>Visual Effects:</strong> Enjoy slicing animations, splash effects, and persistent water splash stains on the background.</li>
+        <li><strong>Sound Effects:</strong> Audio feedback with slicing sounds and bomb explosions.</li>
+        <li><strong>Full‑Screen Experience:</strong> The game automatically launches in full‑screen mode and displays a dynamic HUD.</li>
+    </ul>
 
-Dynamic Gameplay:
-Fruits spawn with varying velocities; slice them by moving the cursor over them to score points.
+    <h2>Requirements</h2>
+    <ul>
+        <li>Python 3.x</li>
+        <li><a href="https://pypi.org/project/opencv-python/">OpenCV-Python</a></li>
+        <li><a href="https://pypi.org/project/mediapipe/">MediaPipe</a></li>
+        <li><a href="https://pypi.org/project/pygame/">PyGame</a></li>
+        <li><a href="https://pypi.org/project/numpy/">NumPy</a></li>
+        <li><a href="https://pypi.org/project/pyttsx3/">pyttsx3</a></li>
+    </ul>
 
-Visual Effects:
-Enjoy slicing animations, splash effects, and persistent water splash stains on the background.
-
-Sound Effects:
-Audio feedback with slicing sounds and bomb explosions.
-
-Full‑Screen Experience:
-The game automatically launches in full‑screen mode and displays a dynamic HUD.
-
-Requirements
-Python 3.x
-
-OpenCV-Python
-
-MediaPipe
-
-PyGame
-
-NumPy
-
-pyttsx3
-
-Installation
-Clone the Repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/fruit-ninja-cursor.git
-cd fruit-ninja-cursor
-(Optional) Create and Activate a Virtual Environment:
-
-bash
-Copy
-Edit
-python -m venv venv
+    <h2>Installation</h2>
+    <ol>
+        <li><strong>Clone the Repository:</strong>
+            <pre><code>git clone https://github.com/yourusername/fruit-ninja-cursor.git
+cd fruit-ninja-cursor</code></pre>
+        </li>
+        <li><strong>(Optional) Create and Activate a Virtual Environment:</strong>
+            <pre><code>python -m venv venv
 venv\Scripts\activate     # On Windows
-source venv/bin/activate  # On macOS/Linux
-Install Dependencies:
-Ensure your requirements.txt includes:
-
-text
-Copy
-Edit
-opencv-python
+source venv/bin/activate  # On macOS/Linux</code></pre>
+        </li>
+        <li><strong>Install Dependencies:</strong><br>
+            Ensure your <code>requirements.txt</code> includes:
+            <pre><code>opencv-python
 mediapipe
 pygame
 numpy
-pyttsx3
-Then run:
+pyttsx3</code></pre>
+            Then run:
+            <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li><strong>Place Asset Files:</strong>
+            Ensure that <code>slice.mp3</code> and <code>explosion.mp3</code> are in the project directory or update their paths in the code accordingly.
+        </li>
+    </ol>
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Place Asset Files:
-Make sure that sound files (slice.mp3 and explosion.mp3) are in the project directory or update their paths in the code accordingly.
+    <h2>Usage</h2>
+    <p>Run the game using:</p>
+    <pre><code>python filename.py</code></pre>
 
-Usage
-Run the game using:
+    <h2>Controls</h2>
+    <ul>
+        <li><strong>M:</strong> Toggle between hand and face tracking modes.</li>
+        <li><strong>ESC:</strong> Exit the game.</li>
+    </ul>
 
-bash
-Copy
-Edit
-python filename.py
-Controls
-M: Toggle between hand and face tracking modes.
+    <h2>Customization</h2>
+    <ul>
+        <li><strong>Cursor Sensitivity:</strong> Adjust the <code>face_sensitivity</code> and <code>hand_sensitivity</code> variables in the code.</li>
+        <li><strong>Fruit Spawn Rate:</strong> Modify the spawn interval in the <code>spawn_fruit</code> function.</li>
+        <li><strong>Visual Effects:</strong> Tweak the slicing animations, splash effects, and water splash stain parameters in their respective classes.</li>
+    </ul>
 
-ESC: Exit the game.
+    <h2>Troubleshooting</h2>
+    <ul>
+        <li><strong>Webcam Issues:</strong> Ensure your webcam is connected and that OpenCV can access it.</li>
+        <li><strong>Sound File Errors:</strong> Verify that <code>slice.mp3</code> and <code>explosion.mp3</code> are in the correct location or update the paths.</li>
+        <li><strong>Performance:</strong> If the game runs slowly, consider reducing resolution or frame rate, or adjusting the sensitivity factors.</li>
+    </ul>
 
-Customization
-Cursor Sensitivity:
-Adjust the face_sensitivity and hand_sensitivity variables in the code.
-
-Fruit Spawn Rate:
-Modify the spawn interval in the spawn_fruit function to increase or decrease fruit spawn frequency.
-
-Visual Effects:
-Tweak the slicing animations, splash effects, and water splash stain parameters in their respective classes.
-
-Troubleshooting
-Webcam Issues:
-Ensure your webcam is connected and that OpenCV can access it.
-
-Sound File Errors:
-Verify that slice.mp3 and explosion.mp3 are in the correct location or update the paths in the code.
-
-Performance:
-If the game runs slowly, consider reducing resolution or frame rate, or adjusting the sensitivity factors.
-
-License
-This project is licensed under the MIT License.
-
+    <h2>License</h2>
+    <p>This project is licensed under the <a href="#">MIT License</a>.</p>
+</body>
+</html>
